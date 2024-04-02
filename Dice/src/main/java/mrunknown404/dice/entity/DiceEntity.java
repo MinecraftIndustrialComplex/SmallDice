@@ -165,7 +165,7 @@ public class DiceEntity extends Entity implements IEntityAdditionalSpawnData {
 		type = tag.contains("Type", Tag.TAG_BYTE) ? tag.getByte("Type") : 6;
 		rolled = tag.contains("Rolled", Tag.TAG_BYTE) ? tag.getByte("Rolled") : (byte) (1 + random.nextInt(type));
 	}
-	
+
 	@Override
 	protected void defineSynchedData() {}
 	
