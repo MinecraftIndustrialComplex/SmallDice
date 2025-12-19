@@ -48,7 +48,7 @@ public class DiceRegistry {
 	}
 	
 	public static final RegistryObject<EntityType<DiceEntity>> DICE_ENTITY = ENTITIES.register("dice_entity",
-			() -> EntityType.Builder.<DiceEntity>of(DiceEntity::new, MobCategory.MISC).sized(0.3125f, 0.3125f).build(Dice.MOD_ID + ":dice_entity"));
+			() -> EntityType.Builder.<DiceEntity>of(DiceEntity::new, MobCategory.MISC).sized(0.15625f, 0.15625f).build(Dice.MOD_ID + ":dice_entity"));
 	
 	public static final RegistryObject<Item> WHITE_D6 = ITEMS.register("white_d6", () -> new DiceItem(WHITE, (byte) 6));
 	public static final RegistryObject<Item> ORANGE_D6 = ITEMS.register("orange_d6", () -> new DiceItem(ORANGE, (byte) 6));

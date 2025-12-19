@@ -29,17 +29,20 @@ public class DiceEntityRenderer extends EntityRenderer<DiceEntity> {
 			case 6 -> d6Model;
 			default -> throw new IllegalArgumentException("Unexpected value: " + dice.getRolled());
 		};
-		
+
 		boolean flag = !dice.isInvisible();
 		boolean flag1 = !flag && !dice.isInvisibleTo(minecraft.player);
-		
+
 		RenderType rendertype = getRenderType(dice, model, flag, flag1);
 		if (rendertype != null) {
+			stack.pushPose();
+			stack.scale(0.5f, 0.5f, 0.5f);
 			model.setupRotation(dice);
 			model.renderToBuffer(stack, buffer.getBuffer(rendertype), packedLight, OverlayTexture.NO_OVERLAY, dice.getRed() / 255f, dice.getGreen() / 255f, dice.getBlue() / 255f,
 					flag1 ? 0.15f : 1f);
+			stack.popPose();
 		}
-		
+
 		super.render(dice, noidea, partial, stack, buffer, packedLight);
 	}
 	
